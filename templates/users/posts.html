@@ -1,0 +1,28 @@
+{% extends "users\base.html" %}
+
+{% block content %}
+ 
+ Welcome {{user}}
+
+ <h4> Post your text</h4>
+  
+  {% comment %} user, text, created_at, updated_at  {% endcomment %}
+
+
+{% if post %}
+{% for p in post %}
+  <p> {{p.text}}  </p> <a  style="flex:inline" href = {% url "update_post" p.id %}> Update Post</a></br></br>
+{% endfor %}
+
+{% endif %}
+ 
+ <div style="margin-top:50px">
+
+    <form action="/loginuser/post/" method="POST">{% csrf_token %}
+            <label for="w3review">Write text:</label>
+            <textarea placeholder="Write text here." name="post_text"  required rows="4" cols="50"> </textarea>  <br><br>
+            <input type="submit" value="Submit">
+    </form>
+</div>
+         
+    {% endblock content %}

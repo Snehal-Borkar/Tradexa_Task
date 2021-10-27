@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My grocery</title>
+    <link rel="stylesheet" href="{% static 'users\css\bootstrap.css' %}">
+</head>
+<body class="container">
+ <div class="container mt-5">
+    
+    <h2 class="text-center alert alert-danger"><a href= ""  type="button"  class="btn btn-light float-start"> </a> Welcome to MY grocery 
+    </h2>
+  <div>
+    {% block content %}
+
+      
+  
+    {% endblock content %}
+    
+</div>
+</div>
+    
+    <script src="{% static 'users\js\bootstrap.js' %}"></script>
+
+
+     
+</body>
+</html>

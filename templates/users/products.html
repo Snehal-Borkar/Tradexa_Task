@@ -1,0 +1,15 @@
+{% extends "users\base.html" %}
+
+{% block content %}
+<div>
+    <a href = "/login"> Login </a>
+</div>
+</br>
+{% for p in products%}
+<a href ={% url 'product_details_and_post_comment'  p.id %} style="margin-right:30px;">{{p.name}}</a>
+{% endfor %}
+{% endblock content %}
+
+
+
+

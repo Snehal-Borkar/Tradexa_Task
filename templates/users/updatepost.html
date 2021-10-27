@@ -1,0 +1,16 @@
+{% extends "users\base.html" %}
+
+{% block content %}
+ 
+ Welcome {{user}}
+
+ <h4> Update your Post</h4>
+ 
+    <form action="{% url "update_post" text.id %}" method="POST">{% csrf_token %}
+            <label for="w3review">Edit text:</label>
+            <textarea placeholder="Write text here." name="post_text" required rows="4" cols="50">{{text.text}} </textarea>  <br><br>
+            <input type="submit" value="Submit">
+    </form>
+</div>
+         
+    {% endblock content %}
