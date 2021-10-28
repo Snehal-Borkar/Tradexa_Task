@@ -4,7 +4,7 @@
  
  Welcome {{user}}
 
- <h4> Post your text</h4>
+ <h4> your Posts</h4>
   
   {% comment %} user, text, created_at, updated_at  {% endcomment %}
 
@@ -17,11 +17,13 @@
 {% endif %}
  
  <div style="margin-top:50px">
-
+  
     <form action="/loginuser/post/" method="POST">{% csrf_token %}
             <label for="w3review">Write text:</label>
-            <textarea placeholder="Write text here." name="post_text"  required rows="4" cols="50"> </textarea>  <br><br>
-            <input type="submit" value="Submit">
+            <textarea  rows="4" cols="50" name="post_text" placeholder="Write text and post"  required></textarea> 
+            {% comment %} <textarea rows="4" cols="50" name="comment" required></textarea> {% endcomment %}
+             </br></br>
+            <input type="submit">
     </form>
 </div>
          

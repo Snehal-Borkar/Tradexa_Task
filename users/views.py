@@ -57,8 +57,9 @@ def handleupdatepost(request,id):
     if request.method =="POST":
         text=request.POST['post_text']
         # Post.objects.get(id=id).update(text=text)
-        
+        crat=datetime.datetime.now()
         upt.text=text
+        upt.updated_at=crat
         upt.save()
         post=Post.objects.filter(user=user)
         return render(request,"users/posts.html",{"post":post,"user":user})

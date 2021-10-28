@@ -24,5 +24,5 @@ urlpatterns = [
     path('loginuser/', views.handlelogin),
     path('loginuser/post/', views.post),
     path('update/post/<int:id>/', views.handleupdatepost,name="update_post"),
-    path('product_details_and_post_comment/<int:id>/', v1.product_details,name="product_details_and_post_comment"),
+    path('product_details/<int:id>/', v1.product_details,name="product_details"),
 ]
